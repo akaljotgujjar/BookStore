@@ -1,10 +1,4 @@
-#about-container {
-    height: 100%;
-    /* background-color: red; */
-}
-
-#about-container-inner {
-    display: grid;
+.nav-container {
     height: 100%;
     width: 80%;
     margin: 0px auto;
@@ -13,31 +7,22 @@
 }
 
 .top-nav {
-    background-color: #222;
+    background-color: brown;
     border-color: #080808;
-    height: 55px;
+    height: 100%;
     border-radius: 4px;
     display: grid;
     grid-template-columns: 1fr auto;
     padding: 1em;
-}
-
-.main-nav {
-    border: 1px solid #e5e5e5;
+    margin: 0px 0px 10px;
 }
 
 .welcome-text {
     color: #FFF;
 }
 
-.logo-text {
-    font-size: 1.75em !important;
-    font-weight: bold;
-}
-
 .top-nav-items {
     list-style-type: none;
-
 }
 
 .top-nav-items li {
@@ -49,57 +34,9 @@
     padding: 5px;
 }
 
-.white {
-    background-color: #FFF !important;
-}
-
-.banner {
-    height: 340px;
-    border-radius: 5px;
-    /* background-image: url('../../assets/img/whistler.jpg'); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 14%;
-    color: #FFF;
-    padding: 3em;
-}
-
-.top-section {
-    width: 100%;
-    background-color: rgb(1, 131, 163);
-    height: 210px;
-    margin: 10px 0px;
-    overflow: hidden;
-}
-
-.top-inner-section {
-    overflow: auto;
-}
-
 .box-shadow {
     -webkit-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
 }
 
-.pic-container {
-    height: 100%;
-    float: left;
-    margin-right: 20px;
-}
-
-.pic-container>img {
-    object-fit: cover;
-    display: block;
-    width: 190px;
-    margin: 10px;
-}
-
-.h2-header {
-    color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.p-white {
-    color: #FFF;
-}
