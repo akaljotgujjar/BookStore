@@ -1,10 +1,13 @@
 <app-header></app-header>
 
-<form class="form-inline justify-content">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-primary my-0 my-sm-4" type="submit">Search</button>
+<!-- Search form -->
+<form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search books by name, author"
+        aria-label="Search">
+    <i class="fas fa-search" aria-hidden="true"></i>
+    <button class="fontFamily" mat-raised-button color="accent" type="search">Search</button>
 </form>
 
-<div class="home-container">
-    
+<div class="mainHome">
+    <app-home-cards *ngFor="let item of homeCard" [cardItem]="item"></app-home-cards>
 </div>

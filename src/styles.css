@@ -1,3 +1,24 @@
 .justify-content {
     justify-content: center;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.circle {
+    border-radius: 50%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.fontFamily {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+}
+
+.boxShadow {
+    -webkit-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.45);
+}

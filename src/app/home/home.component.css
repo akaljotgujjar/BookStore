@@ -1,0 +1,13 @@
+.picTemp {
+    height: 150px;
+    width: 150px;
+}
+
+.mainHome {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    text-align: center;
+    grid-row-gap: 3em;
+    margin: 20px 0px;
+}
