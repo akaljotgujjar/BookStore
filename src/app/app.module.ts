@@ -12,8 +12,13 @@ import { routerModule } from './routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatTabsModule} from '@angular/material/tabs';
 import { SharedComponentModule } from './shared-component/shared-component.module';
+import { SignInComponent } from './sign-in/sign-in.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 @NgModule({
   declarations: [
@@ -23,6 +28,7 @@ import { SharedComponentModule } from './shared-component/shared-component.modul
     HomeComponent,
     TextbooksComponent,
     RentComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,10 @@ import { SharedComponentModule } from './shared-component/shared-component.modul
     BrowserAnimationsModule,
     MatButtonModule,
     SharedComponentModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
