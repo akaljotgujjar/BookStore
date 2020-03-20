@@ -9,6 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { TextbooksComponent } from './textbooks/textbooks.component';
 import { RentComponent } from './rent/rent.component';
 import { routerModule } from './routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
+import { SharedComponentModule } from './shared-component/shared-component.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +22,16 @@ import { routerModule } from './routes';
     FooterComponent,
     HomeComponent,
     TextbooksComponent,
-    RentComponent
+    RentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routerModule
+    routerModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    SharedComponentModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

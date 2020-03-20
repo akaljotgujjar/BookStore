@@ -1,5 +1,4 @@
 .nav-container {
-    height: 100%;
     width: 80%;
     margin: 0px auto;
     grid-row-gap: 1em;
@@ -7,9 +6,8 @@
 }
 
 .top-nav {
-    background-color: brown;
+    background-color: lightsteelblue;
     border-color: #080808;
-    height: 100%;
     border-radius: 4px;
     display: grid;
     grid-template-columns: 1fr auto;
@@ -18,11 +16,12 @@
 }
 
 .welcome-text {
-    color: #FFF;
+    color: black;
 }
 
 .top-nav-items {
     list-style-type: none;
+
 }
 
 .top-nav-items li {
@@ -30,7 +29,7 @@
 }
 
 .top-nav-items li a {
-    color: #FFF;
+    color: black;
     padding: 5px;
 }
 
@@ -38,5 +37,10 @@
     -webkit-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 1px 9px -1px rgba(0, 0, 0, 0.75);
+}
+
+.fontFamily {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
 }
 
