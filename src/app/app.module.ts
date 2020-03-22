@@ -18,6 +18,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MainHeaderComponent } from './main-header/main-header.component';
 
 
 
@@ -31,6 +32,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     RentComponent,
     SignInComponent,
     CheckoutComponent,
+    MainHeaderComponent,
   ],
   imports: [
     BrowserModule,

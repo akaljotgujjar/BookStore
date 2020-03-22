@@ -1,21 +1,22 @@
-<div class="nav-container">
-    <nav class="top-nav">
-        <span class="welcome-text fontFamily"><i>Smart Book</i></span>
-        <ul class="top-nav-items">
-            <li>
-                <a class="fontFamily" href="#"> <i class="fas fa-user"></i> Wish List</a>
-            </li>
-            <li>
-                <a class="fontFamily" href="#"> <i class="fas fa-gift"></i> Shopping Cart</a>
-            </li>
-            <li>
-                <a class="fontFamily" [routerLink]="'/checkout'"><i class="fas fa-shopping-cart"></i> Checkout</a>
-            </li>
-            <li>
-                <a class="fontFamily" href="#"><i class="fas fa-long-arrow-alt-right"></i> My Account</a>
-            </li>
-            <li>
-                <a class="fontFamily" [routerLink]="'/signIn'"><i class="fas fa-long-arrow-alt-right"></i> Sign In</a>
-            </li>
-        </ul>
-    </nav>
+<div class=" table-grid">
+
+    <table class="table table-striped">
+      <thead class="bar">
+        <tr>
+          <th>Books</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{data.books}}</td>
+          <td>{{data.price}}</td>
+          <td>{{data.quantity}}</td>
+          <td>{{data.total}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
