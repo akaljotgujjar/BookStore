@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { TextbooksComponent } from './textbooks/textbooks.component';
 import { RentComponent } from './rent/rent.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
     {
@@ -35,6 +36,14 @@ const routes: Routes = [
         resolve: {},
         data: {
             name: 'signIn'
+        }
+    },
+    {
+        path: 'checkout',
+        component: CheckoutComponent,
+        resolve: {},
+        data: {
+            name: 'checkout'
         }
     }
 ];

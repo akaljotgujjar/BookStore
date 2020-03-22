@@ -17,6 +17,7 @@ import { SharedComponentModule } from './shared-component/shared-component.modul
 import { SignInComponent } from './sign-in/sign-in.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
@@ -29,6 +30,7 @@ import {MatInputModule} from '@angular/material/input';
     TextbooksComponent,
     RentComponent,
     SignInComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
