@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../shared-service/http.service';
 import { ToastService } from '../toast/toast.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface IHome {
   id?: number;
@@ -8,6 +9,8 @@ interface IHome {
   bookName: string;
   bookAuthor: string;
   bookType: string;
+  bookPrice: string;
+  bookQuantity: string;
 }
 
 @Component({
@@ -19,13 +22,23 @@ export class HomeComponent implements OnInit {
 
   books = [];
   homeCard: Array<IHome> = [];
-
+  loggedIn = false;
+  bookParams = '';
   constructor(
     private toastService: ToastService,
-    private http: HttpService
+    private http: HttpService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   async ngOnInit() {
+    const token = localStorage.getItem('id_token');
+    if (token == null) {
+      this.loggedIn = false;
+      this.router.navigate(['signIn']);
+    } else {
+      this.loggedIn = true;
+    }
     await this.refresh();
   }
 
@@ -67,7 +80,7 @@ export class HomeComponent implements OnInit {
     return resp;
   }
 
-  async removeBook (book: any, index: number) {
+  async removeBook(book: any, index: number) {
     const resp = await this.http.delete(`book/id/${book.id}`);
     if (resp) {
       this.refresh();
