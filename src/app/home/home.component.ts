@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../shared-service/http.service';
+import { ToastService } from '../toast/toast.service';
 
 interface IHome {
   id?: number;
@@ -15,85 +17,65 @@ interface IHome {
 })
 export class HomeComponent implements OnInit {
 
+  books = [];
   homeCard: Array<IHome> = [];
 
-  constructor() { }
+  constructor(
+    private toastService: ToastService,
+    private http: HttpService
+  ) { }
 
-  ngOnInit() {
-    this.homeCard = [
-      {
-        bookImage: '../../assets/img/pic1.jpg',
-        bookName: 'Book1',
-        bookAuthor: 'Author1',
-        bookType: 'English'
-      },
-      {
-        bookImage: '../../assets/img/pic2.jpg',
-        bookName: 'Book2',
-        bookAuthor: 'Author2',
-        bookType: 'History'
-      },
-      {
-        bookImage: '../../assets/img/pic1.jpg',
-        bookName: 'Book3',
-        bookAuthor: 'Author3',
-        bookType: 'Math'
-      },
-      {
-        bookImage: '../../assets/img/pic2.jpg',
-        bookName: 'Book4',
-        bookAuthor: 'Author4',
-        bookType: 'Science'
-      },
-      {
-        bookImage: '../../assets/img/pic1.jpg',
-        bookName: 'Book5',
-        bookAuthor: 'Author5',
-        bookType: 'English'
-      },
-      {
-        bookImage: '../../assets/img/pic2.jpg',
-        bookName: 'Book6',
-        bookAuthor: 'Author6',
-        bookType: 'History'
-      },
-      {
-        bookImage: '../../assets/img/pic1.jpg',
-        bookName: 'Book7',
-        bookAuthor: 'Author7',
-        bookType: 'Math'
-      },
-      {
-        bookImage: '../../assets/img/pic2.jpg',
-        bookName: 'Book8',
-        bookAuthor: 'Author8',
-        bookType: 'Science'
-      },
-      {
-        bookImage: '../../assets/img/pic1.jpg',
-        bookName: 'Book9',
-        bookAuthor: 'Author9',
-        bookType: 'English'
-      },
-      {
-        bookImage: '../../assets/img/pic2.jpg',
-        bookName: 'Book10',
-        bookAuthor: 'Author10',
-        bookType: 'History'
-      },
-      {
-        bookImage: '../../assets/img/pic1.jpg',
-        bookName: 'Book11',
-        bookAuthor: 'Author11',
-        bookType: 'Math'
-      },
-      {
-        bookImage: '../../assets/img/pic2.jpg',
-        bookName: 'Book12',
-        bookAuthor: 'Author12',
-        bookType: 'Science'
-      }
-    ];
+  async ngOnInit() {
+    await this.refresh();
   }
+
+  async refresh() {
+    this.books = await this.getBooks('book');
+  }
+
+  async getBooks(path: string) {
+    const resp = await this.http.get(path);
+    console.log('resp from getBooks()', resp);
+    return resp;
+  }
+
+  async createBook() {
+    const book = {
+      name: null,
+      author: null,
+      isbn: null,
+      description: null
+    };
+    const resp = await this.http.post('book', book);
+    console.log('from createBook() resp: ', resp);
+    if (resp) {
+      // this.refresh();
+      this.books.unshift(resp);
+    } else {
+      this.toastService.showToast('danger', 3000, 'Book creation failed!');
+    }
+    return resp;
+  }
+
+  async updateBook(book: any) {
+    console.log('from updateBook book ', book);
+    const resp = await this.http.put(`book/id/${book.id}`, book);
+    if (resp) {
+      this.toastService.showToast('success', 3000, 'Book updated successfully!');
+    }
+    // console.log('from updateBook() resp: ', resp);
+    return resp;
+  }
+
+  async removeBook (book: any, index: number) {
+    const resp = await this.http.delete(`book/id/${book.id}`);
+    if (resp) {
+      this.refresh();
+    } else {
+      this.toastService.showToast('danger', 3000, 'Book deletion failed!');
+    }
+  }
+
+
 
 }

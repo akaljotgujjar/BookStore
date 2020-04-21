@@ -19,8 +19,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
-
-
+import { SharedServiceModule } from '../shared-service/shared-service.module';
+import { FormsModule } from '@angular/forms';
+import { MaterialDesignModule } from '../material-design/material-design.module';
+import { ToastModule } from './toast/toast.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,11 @@ import { MainHeaderComponent } from './main-header/main-header.component';
     MatIconModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    SharedServiceModule,
+    FormsModule,
+    MaterialDesignModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
