@@ -4,9 +4,9 @@
 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search books by name, author"
         aria-label="Search">
-    <i class="fas fa-search" aria-hidden="true"></i>
     <button class="fontFamily" mat-raised-button color="accent" type="search">Search</button>
     <button class="functionButton" mat-raised-button color="primary" (click)="createBook()">Add New Book</button>
+    <button class="functionButton" mat-raised-button color="success" [routerLink]="'/shoppingcart'"><i class="fas fa-shopping-cart"></i></button>
 </form>
 
 <!-- <div class="mainHome">
@@ -60,7 +60,7 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary">Add to Cart</button>
+          <button mat-raised-button color="primary"(click)="AddToCart">Add to Cart</button>
           <div class="btn-group pull-right">
             <button mat-raised-button color="primary" class="pull-right" (click)="updateBook(book)">Save</button>
             <button mat-raised-button color="warn" (click)="removeBook(book, i)">Delete</button>

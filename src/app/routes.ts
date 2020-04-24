@@ -4,6 +4,7 @@ import { TextbooksComponent } from './textbooks/textbooks.component';
 import { RentComponent } from './rent/rent.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 const routes: Routes = [
     {
@@ -44,6 +45,14 @@ const routes: Routes = [
         resolve: {},
         data: {
             name: 'checkout'
+        }
+    },
+    {
+        path: 'shoppingcart',
+        component: ShoppingcartComponent,
+        resolve: {},
+        data: {
+            name: 'shoppingcart'
         }
     }
 ];

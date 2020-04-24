@@ -23,6 +23,7 @@ import { SharedServiceModule } from '../shared-service/shared-service.module';
 import { FormsModule } from '@angular/forms';
 import { MaterialDesignModule } from '../material-design/material-design.module';
 import { ToastModule } from './toast/toast.module';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ToastModule } from './toast/toast.module';
     SignInComponent,
     CheckoutComponent,
     MainHeaderComponent,
+    ShoppingcartComponent,
   ],
   imports: [
     BrowserModule,
