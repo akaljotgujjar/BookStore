@@ -50,4 +50,13 @@ export class ShoppingcartComponent implements OnInit {
     return resp;
   }
 
+  async deletecartbook(shoppingcart: any, index: number) {
+    const resp = await this.http.delete(`ShoppingCart/id/${shoppingcart.id}`);
+    if (resp) {
+      this.refresh();
+    } else {
+      this.toastService.showToast('danger', 3000, 'Remove from cart failed!');
+    }
+  }
+
 }

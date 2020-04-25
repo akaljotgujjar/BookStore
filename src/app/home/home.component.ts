@@ -71,12 +71,10 @@ export class HomeComponent implements OnInit {
   }
 
   async updateBook(book: any) {
-    console.log('from updateBook book ', book);
     const resp = await this.http.put(`book/id/${book.id}`, book);
     if (resp) {
       this.toastService.showToast('success', 3000, 'Book updated successfully!');
     }
-    // console.log('from updateBook() resp: ', resp);
     return resp;
   }
 
@@ -89,8 +87,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  AddToCart() {
-    
+  async AddToCart(book: any) {
+    const resp = await this.http.post('ShoppingCart', book);
+    if (resp) {
+      this.toastService.showToast('success', 3000, 'Added successfully');
+    }
   }
 
 }
