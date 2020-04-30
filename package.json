@@ -23,7 +23,7 @@
     "@angular/router": "~8.2.14",
     "@material/button": "^5.1.0",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "material-components-web": "^5.1.0",
     "mdbootstrap": "^4.14.1",
     "ngx-bootstrap": "^5.5.0",
