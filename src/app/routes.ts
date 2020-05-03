@@ -5,6 +5,9 @@ import { RentComponent } from './rent/rent.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { BookCreateComponent } from './home/book-create/book-create.component';
+import { BookEditComponent } from './home/book-edit/book-edit.component';
+import { BookComponent } from './home/book/book.component';
 
 const routes: Routes = [
     {
@@ -53,6 +56,22 @@ const routes: Routes = [
         resolve: {},
         data: {
             name: 'shoppingcart'
+        }
+    }, {path: 'book/:id', component: BookComponent},
+    {
+        path: 'book-edit/:id',
+        component: BookEditComponent,
+        resolve: {},
+        data: {
+            name: 'book-edit'
+        }
+    },
+    {
+        path: 'book-create',
+        component: BookCreateComponent,
+        resolve: {},
+        data: {
+            name: 'book-create'
         }
     }
 ];

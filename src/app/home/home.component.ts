@@ -94,4 +94,13 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  async getBookByID(book: any, index: number) {
+    const resp = await this.http.get(`book/id/${book.id}`);
+    return book || [];
+  }
+
+  goToCreate() {
+    this.router.navigate(['book-create']);
+  }
+
 }

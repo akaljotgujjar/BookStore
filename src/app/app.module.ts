@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { TextbooksComponent } from './textbooks/textbooks.component';
 import { RentComponent } from './rent/rent.component';
 import { routerModule } from './routes';
+import { RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -24,6 +25,13 @@ import { FormsModule } from '@angular/forms';
 import { MaterialDesignModule } from '../material-design/material-design.module';
 import { ToastModule } from './toast/toast.module';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { BookComponent } from './home/book/book.component';
+import { BookCreateComponent } from './home/book-create/book-create.component';
+import { BookEditComponent } from './home/book-edit/book-edit.component';
+
+const appRoutes: Routes = [
+  {path: 'book/id', component: BookComponent}
+];
 
 @NgModule({
   declarations: [
@@ -37,6 +45,9 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
     CheckoutComponent,
     MainHeaderComponent,
     ShoppingcartComponent,
+    BookComponent,
+    BookCreateComponent,
+    BookEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +63,8 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
     SharedServiceModule,
     FormsModule,
     MaterialDesignModule,
-    ToastModule
+    ToastModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
