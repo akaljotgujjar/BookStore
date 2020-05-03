@@ -66,10 +66,16 @@
 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
   <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search books by name, author"
     aria-label="Search">
-  <button class="fontFamily" mat-raised-button color="accent" type="search">Search</button>
-  <button class="functionButton" mat-raised-button color="primary" (click)="goToCreate()">Add New Book</button>
-  <button class="functionButton" mat-raised-button color="success" [routerLink]="'/shoppingcart'"><i
-      class="fas fa-shopping-cart"></i></button>
+  <button class="fontFamily btn btn-info" type="button" color="info" type="search">
+    <i class="fas fa-search"></i>
+     Search
+  </button>
+  <button class="functionButton btn btn-primary" type="button" color="primary" (click)="goToCreate()">
+    Add Book
+  </button>
+  <button type="button" class="btn btn-success" color="success" [routerLink]="'/shoppingcart'">
+    <i class="fas fa-shopping-cart"></i>
+  </button>
 </form>
 
 <!-- <div class="mainHome">
@@ -92,16 +98,20 @@
       <P>Author: {{book.author}}</P>
       <P>ISBN: {{book.isbn}}</P>
     </mat-card-content>
-    <mat-card-actions class="btn-action-grid">
+    <mat-card-actions>
       <button type="button" class="btn btn-success" (click)="AddToCart(book)" color="success">
         <i class="fas fa-dollar-sign"></i>
         {{book.price}}
         <i class="fas fa-shopping-cart"></i>
       </button>
-      <button type="button" class="btn btn-danger" [routerLink]="['/book-edit', book.id]">
-        Edit
-        <mat-icon class="example-icon">edit</mat-icon>
-      </button>
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-secondary" [routerLink]="['/book-edit', book.id]">
+          <mat-icon class="example-icon">edit</mat-icon>
+        </button>
+        <button type="button" class="btn btn-danger" (click)="removeBook(book, i)">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </div>
     </mat-card-actions>
   </mat-card>
 </div>
