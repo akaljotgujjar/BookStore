@@ -25,12 +25,10 @@ import { FormsModule } from '@angular/forms';
 import { MaterialDesignModule } from '../material-design/material-design.module';
 import { ToastModule } from './toast/toast.module';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
-import { BookComponent } from './home/book/book.component';
 import { BookCreateComponent } from './home/book-create/book-create.component';
 import { BookEditComponent } from './home/book-edit/book-edit.component';
 
 const appRoutes: Routes = [
-  {path: 'book/id', component: BookComponent}
 ];
 
 @NgModule({
@@ -45,7 +43,6 @@ const appRoutes: Routes = [
     CheckoutComponent,
     MainHeaderComponent,
     ShoppingcartComponent,
-    BookComponent,
     BookCreateComponent,
     BookEditComponent,
   ],

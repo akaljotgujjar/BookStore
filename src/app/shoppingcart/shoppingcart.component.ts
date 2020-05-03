@@ -59,4 +59,24 @@ export class ShoppingcartComponent implements OnInit {
     }
   }
 
+  calculate() {
+    const subTotal = this.shoppingcarts.reduce((inc, item, i, arc) => {
+      inc += item.price * item.quantity;
+      return inc;
+    }, 0);
+    const taxAmount = subTotal * .1;
+    const Total = subTotal + taxAmount;
+
+    return {
+      tax: taxAmount,
+      subTotal: subTotal,
+      total: Total
+    };
+  }
+
+  checkout() {
+    const data = this.calculate();
+    this.router.navigate(['checkout', data]);
+  }
+
 }

@@ -1,7 +1,7 @@
-
 <!-- Search form -->
 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
-    <button type="button" class="btn btn-success btn-lg btn-block" [routerLink]="'/checkout'" ><i class="far fa-money-bill-alt"></i> Check Out</button>
+  <button type="button" class="btn btn-success btn-lg btn-block" (click)="checkout()"><i
+      class="far fa-money-bill-alt"></i> Check Out</button>
 </form>
 
 <!-- <div class="mainHome">
@@ -10,55 +10,35 @@
 
 <!-- books from database list -->
 
-<div class="contact-grid">
-    <div class="gallery-grid">
-      <mat-card class="example-card" *ngFor="let shoppingcart of shoppingcarts; let i = index">
-        <mat-card-content>
-          <img class="cover" [src]="shoppingcart.image_url" alt="bike">
-          <p>
-            <label for="id">Image Url:</label>
-            <input [(ngModel)]="shoppingcart.image_url" type="text" class="form-control" placeholder="Image" aria-label="Image">
-          </p>
-          <p>
-            <label for="id">ID:</label>
-            <input [(ngModel)]="shoppingcart.id" disabled type="text" class="form-control" placeholder="ID" aria-label="ID">
-          </p>
-          <p>
-            <label for="description">Name</label>
-            <input [(ngModel)]="shoppingcart.name" type="text" class="form-control" placeholder="Name" aria-label="desc"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="price">Author</label>
-            <input [(ngModel)]="shoppingcart.author" type="text" class="form-control" placeholder="Author" aria-label="price"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="price">ISBN</label>
-            <input [(ngModel)]="shoppingcart.isbn" type="text" class="form-control" placeholder="ISBN" aria-label="price"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="price">Description</label>
-            <input [(ngModel)]="shoppingcart.description" type="text" class="form-control" placeholder="Description"
-              aria-label="price" aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="quantity">Price</label>
-            <input [(ngModel)]="shoppingcart.price" type="text" class="form-control" placeholder="Price" aria-label="qty"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="quantity">Quantity</label>
-            <input [(ngModel)]="shoppingcart.quantity" type="text" class="form-control" placeholder="Quantity" aria-label="qty"
-              aria-describedby="basic-addon1">
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <div class="btn-group pull-right">
-            <button mat-raised-button color="warn" (click)="deletecartbook(shoppingcart, i)">Delete</button>
-          </div>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div>
+<div class="book-card-container">
+  <mat-card class="grow item-card" *ngFor="let shoppingcart of shoppingcarts; let i = index">
+    <mat-toolbar color="warn" class="toolbar">
+      <mat-toolbar-row>
+        <mat-card-title>{{shoppingcart.name}}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <img class="list-cover-image" mat-card-image [src]="shoppingcart.image_url" alt="book">
+    <mat-card-content>
+      <P>Author: {{shoppingcart.author}}</P>
+      <P>ISBN: {{shoppingcart.isbn}}</P>
+      <p>
+        <label for="quantity">Quantity</label>
+        <input [(ngModel)]="shoppingcart.quantity" type="number" min = "1" class="form-control" placeholder="Quantity" aria-label="qty"
+          aria-describedby="basic-addon1">
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="button" class="btn btn-success" (click)="AddToCart(book)" color="success">
+        Total = 
+        <i class="fas fa-dollar-sign"></i>
+        {{shoppingcart.price * shoppingcart.quantity}}
+      </button>
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-danger" (click)="deletecartbook(shoppingcart, i)">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

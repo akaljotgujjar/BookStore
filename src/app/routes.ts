@@ -7,7 +7,6 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { BookCreateComponent } from './home/book-create/book-create.component';
 import { BookEditComponent } from './home/book-edit/book-edit.component';
-import { BookComponent } from './home/book/book.component';
 
 const routes: Routes = [
     {
@@ -57,7 +56,7 @@ const routes: Routes = [
         data: {
             name: 'shoppingcart'
         }
-    }, {path: 'book/:id', component: BookComponent},
+    },
     {
         path: 'book-edit/:id',
         component: BookEditComponent,
