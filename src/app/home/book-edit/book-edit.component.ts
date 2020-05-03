@@ -21,8 +21,8 @@ export class BookEditComponent implements OnInit {
   async ngOnInit() {
     const resp = await this.getBookById(this.activatedRoute.snapshot.params[`id`]);
     console.log(this.activatedRoute.snapshot.params['id']);
-    this.book = resp || [];
-    console.log('data', this.book);
+    this.book = resp.data || [];
+    console.log(this.book);
 
   }
 
