@@ -27,6 +27,9 @@ import { ToastModule } from './toast/toast.module';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { BookCreateComponent } from './home/book-create/book-create.component';
 import { BookEditComponent } from './home/book-edit/book-edit.component';
+import { UserComponent } from './user/user.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
 
 const appRoutes: Routes = [
 ];
@@ -45,6 +48,9 @@ const appRoutes: Routes = [
     ShoppingcartComponent,
     BookCreateComponent,
     BookEditComponent,
+    UserComponent,
+    UserCreateComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,
