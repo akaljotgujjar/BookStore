@@ -20,9 +20,7 @@ export class BookEditComponent implements OnInit {
   ) { }
   async ngOnInit() {
     const resp = await this.getBookById(this.activatedRoute.snapshot.params[`id`]);
-    console.log(this.activatedRoute.snapshot.params['id']);
     this.book = resp.data || [];
-    console.log(this.book);
 
   }
 
@@ -36,7 +34,6 @@ export class BookEditComponent implements OnInit {
   async update(bookID, book) {
     const resp = await this.http.put(`book/id/${bookID}`, book);
     return resp;
-    console.log('updatebook', resp);
   }
 
   async updateBook(book: any) {

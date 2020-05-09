@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
 
   async getBooks(path: string) {
     const resp = await this.http.get(path);
-    console.log('resp from getBooks()', resp);
     return resp;
   }
 
@@ -60,7 +59,6 @@ export class HomeComponent implements OnInit {
       description: null
     };
     const resp = await this.http.post('book', book);
-    console.log('from createBook() resp: ', resp);
     if (resp) {
       // this.refresh();
       this.books.unshift(resp);

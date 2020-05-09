@@ -38,7 +38,6 @@ export class UserComponent implements OnInit {
 
   async getUsers(path: string) {
     const resp = await this.http.get(path);
-    console.log('resp from getUser', resp);
     return resp;
   }
 

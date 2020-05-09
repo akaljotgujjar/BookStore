@@ -13,27 +13,23 @@ export class HttpService {
   }
 
   testing() {
-    console.log('from http service testing..........');
   }
 
   // get('book');
   async get(path: string) {
     const resp = await this.http.get(this.apiURL + path, this.headers).toPromise();
-    console.log('response from the http service get () resp: ', resp.json());
     return resp.json();
   }
 
   // post('book',{name: 'Twilight', isbn: '123456789'});
   async post(path: string, payload: any) {
     const resp = await this.http.post(this.apiURL + path, payload, this.headers).toPromise();
-    console.log('from http service post() resp: ', resp.json());
     return resp.json();
   }
 
   // put('book/id/7', {name: The Hunger Games, isbn: 987654321, Author: Suzanne Collins, Description: Book of The Hunger Games})
   async put(path: string, payload: any) {
     const resp = await this.http.put(this.apiURL + path, payload, this.headers).toPromise();
-    console.log('from http service put() resp: ', resp.json());
     return resp.json();
 
   }
@@ -41,14 +37,12 @@ export class HttpService {
   // delete ('book/id/10');
   async delete(path: string) {
     const resp = await this.http.delete(this.apiURL + path, this.headers).toPromise();
-    console.log('from http service delete()', resp.json());
     return resp.json();
   }
 
   // logout();
   async logout() {
     const resp = await this.http.get(this.apiURL + 'user/logout', this.headers).toPromise();
-    console.log('from http service logout()', resp.json());
     return resp.json();
   }
 

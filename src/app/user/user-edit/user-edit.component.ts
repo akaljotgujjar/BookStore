@@ -20,9 +20,7 @@ export class UserEditComponent implements OnInit {
 
   async ngOnInit() {
     const resp = await this.getUserById(this.activatedRoute.snapshot.params[`id`]);
-    console.log(this.activatedRoute.snapshot.params['id']);
     this.user = resp.data || [];
-    console.log(this.user);
   }
 
   async getUserById(userID) {

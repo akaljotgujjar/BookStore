@@ -1,68 +1,4 @@
-<!-- <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
-    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search books by name, author"
-        aria-label="Search">
-    <button class="fontFamily" mat-raised-button color="accent" type="search">Search</button>
-    <button class="functionButton" mat-raised-button color="primary" (click)="createBook()">Add New Book</button>
-    <button class="functionButton" mat-raised-button color="success" [routerLink]="'/shoppingcart'"><i class="fas fa-shopping-cart"></i></button>
-</form>
-<div class="contact-grid">
-    <div class="gallery-grid">
-      <mat-card class="example-card" *ngFor="let book of books; let i = index">
-        <mat-card-content>
-          <img class="cover" [src]="book.image_url" alt="bike">
-          <p>
-            <label for="id">Image Url:</label>
-            <input [(ngModel)]="book.image_url" type="text" class="form-control" placeholder="Image" aria-label="Image">
-          </p>
-          <p>
-            <label for="id">ID:</label>
-            <input [(ngModel)]="book.id" disabled type="text" class="form-control" placeholder="ID" aria-label="ID">
-          </p>
-          <p>
-            <label for="description">Name</label>
-            <input [(ngModel)]="book.name" type="text" class="form-control" placeholder="Name" aria-label="desc"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="price">Author</label>
-            <input [(ngModel)]="book.author" type="text" class="form-control" placeholder="Author" aria-label="price"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="price">ISBN</label>
-            <input [(ngModel)]="book.isbn" type="text" class="form-control" placeholder="ISBN" aria-label="price"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="price">Description</label>
-            <input [(ngModel)]="book.description" type="text" class="form-control" placeholder="Description"
-              aria-label="price" aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="quantity">Price</label>
-            <input [(ngModel)]="book.price" type="text" class="form-control" placeholder="Price" aria-label="qty"
-              aria-describedby="basic-addon1">
-          </p>
-          <p>
-            <label for="quantity">Quantity</label>
-            <input [(ngModel)]="book.quantity" type="text" class="form-control" placeholder="Quantity" aria-label="qty"
-              aria-describedby="basic-addon1">
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary"(click)="AddToCart(book)">Add to Cart</button>
-          <div class="btn-group pull-right">
-            <button mat-raised-button color="primary" class="pull-right" (click)="updateBook(book)">Save</button>
-            <button mat-raised-button color="warn" (click)="removeBook(book, i)">Delete</button>
-          </div>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div> -->
 
-<app-header></app-header>
-
-<!-- Search form -->
 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
   <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search books by name, author"
     aria-label="Search">
@@ -78,11 +14,6 @@
   </button>
 </form>
 
-<!-- <div class="mainHome">
-    <app-home-cards *ngFor="let item of homeCard" [cardItem]="item"></app-home-cards>
-</div> -->
-
-<!-- books from database list -->
 
 <div class="book-card-container">
   <mat-card class="boxShadow item-card" *ngFor="let book of books; let i = index">

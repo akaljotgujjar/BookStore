@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { TextbooksComponent } from './textbooks/textbooks.component';
-import { RentComponent } from './rent/rent.component';
 import { routerModule } from './routes';
 import { RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +17,6 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { MainHeaderComponent } from './main-header/main-header.component';
 import { SharedServiceModule } from '../shared-service/shared-service.module';
 import { FormsModule } from '@angular/forms';
 import { MaterialDesignModule } from '../material-design/material-design.module';
@@ -40,11 +37,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    TextbooksComponent,
-    RentComponent,
     SignInComponent,
     CheckoutComponent,
-    MainHeaderComponent,
     ShoppingcartComponent,
     BookCreateComponent,
     BookEditComponent,
