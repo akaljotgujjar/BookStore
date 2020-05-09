@@ -44,9 +44,11 @@
     grid-template-columns: 1fr auto;
     width: 100%;
   }
+
   .pull-right {
     float: right;
   }
+
   .cover {
     height: 150px;
     width: 100%;
@@ -116,3 +118,12 @@
   .shopC {
     background-color: #28a745;
   }
+
+.title {
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.item-card {
+  background-color: rgb(250, 250, 250);
+}
